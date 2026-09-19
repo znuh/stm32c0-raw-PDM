@@ -8,8 +8,30 @@ Tools for reading the data from USB and converting the raw PDM bitstream to PCM 
 ## Why?
 I mainly made this to record bat calls. (See below.) While 80kHz is not sufficient to capture the calls of all bats, a lot of types can still be recorded with a very low cost setup - the SPH0641LU4H costs less than 4€.
 
-TBD: Bat call example
-
-Apart from this, several other ultrasonic emitters such as inductors of power supplies, acoustic marten deterrents, etc., etc. can be found/identified with this microphone. It's quite interesting to "see" some of these things we cannot hear.
+Apart from this, several other ultrasonic emitters such as inductors/transformers of power supplies, acoustic marten deterrents, etc., etc. can be found/identified with this microphone. It's quite interesting to "see" some of these things we cannot hear.
 
 TBD: example electric fly swatter
+
+## Hardware Setup
+TBD: schem, photo
+I added the microphone "dead bug style" to a simple [STM32C0 Board](https://github.com/znuh/stm32c0-nano-hw) I made a while ago. It looks like this:
+TBD
+You have to be careful to keep any flux away from the microphone port (the opening).
+
+## Analyzing Bat Calls
+[Audacity](https://www.audacityteam.org/) can be used to further process WAV files for analysis.  
+A sensible workflow seems to be:
+* apply a high pass filter first (e.g. with f=10kHz)
+* then apply a compressor to amplify weak signals
+
+After this you can use `Change Speed and Pitch` with a multiplier of `0.1` to slow the recording down 10 times to make the calls audible for puny human ears by making the calls 10 times longer and mixing them down to 1/10th of the original frequency. This also makes the variation of frequency over time more clearly visible when you view the calls in baudline or [audioprism](https://github.com/vsergeev/audioprism).  
+Example:
+TBD
+
+### Further Reading
+All of these links are in German, sorry:
+* [Akustische Bestimmung von Fledermausrufen](https://fledermausschutz-seligenstadt.de/akustische-bestimmung-von-fledermausrufen/)
+* [Bestimmungshilfe - Lautaufnahmen](https://www.fledermaus-bayern.de/downloads.html?file=files/upload/Downloads/bestimmungshilfen/wertung-artnachweise-lautanalyse.pdf) (PDF)
+* [Kurzübersicht - Ruffrequenzen der Fledermausarten](https://www.fledermaus-bayern.de/downloads.html?file=files/upload/Downloads/bestimmungshilfen/feldf_hrer_frequenzen.pdf) (PDF)
+* [Kleine Übersicht über die Rufe unserer Fledermäuse](https://www.fledermaus-bayern.de/downloads.html?file=files/upload/Downloads/bestimmungshilfen/rufe_einheimischer_flederm_use.pdf) (PDF)
+* [Softwaresammlung (OSX/Windows) zur Analyse von Fledermausrufen](https://www.fledermausschutz.de/forschen/analyse-von-fledermausrufen/)
