@@ -32,7 +32,8 @@ SELECT of the microphone is connected to GND.
 
 I wired the microphone "dead bug style" to a simple [STM32C0 Board](https://github.com/znuh/stm32c0-nano-hw) I made a while ago. It looks like this:  
 <img width="400" height="400" alt="mems_faedel" src="https://github.com/user-attachments/assets/1ee36cf1-bee3-4f0f-9f3e-96211178976d" />  
-You have to be careful to keep any flux away from the microphone port (the opening). I added 3x 10nF 0603 C0G/NP0 caps as decoupling caps to the microphone. (That's the largest C0G/NP0 value I had at hand. There's also a 4.7µF 0402 X5R a few millimeters "after" the C0Gs.)
+You have to be careful to keep any flux away from the microphone port (the opening).  
+I added 3x 10nF 0603 C0G/NP0 caps as decoupling caps to the microphone. (That's the largest C0G/NP0 value I had at hand. There's also a 4.7µF 0402 X5R a few millimeters "after" the C0Gs.)
 
 ## Analyzing Bat Calls
 [Audacity](https://www.audacityteam.org/) can be used to further process WAV files for analysis.  
