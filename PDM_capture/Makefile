@@ -29,5 +29,5 @@ all: $(PROJECT).bin
 	$(PREFIX)size $(PROJECT).elf
 
 load: $(PROJECT).bin
-	(cd ../utils && make && ./pdm_capture -b && sleep 1) || true
+	(cd ../host && make && ./pdm_capture -b && sleep 1) || true
 	dfu-util -a 0 -s 0x08000000:leave -D $(PROJECT).bin
