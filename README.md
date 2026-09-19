@@ -42,8 +42,16 @@ A sensible workflow seems to be:
 * then apply a compressor to amplify weak signals
 
 After this you can use `Change Speed and Pitch` with a multiplier of `0.1` to slow the recording down 10 times to make the calls audible for puny human ears by making the calls 10 times longer and mixing them down to 1/10th of the original frequency. This also makes the variation of frequency over time more clearly visible when you view the calls in baudline or [audioprism](https://github.com/vsergeev/audioprism).  
-Example:
-TBD
+
+**Examples:**
+
+<img width="724" height="227" alt="pipi" src="https://github.com/user-attachments/assets/401e6049-9282-468a-8c2f-123086ab6940" />
+
+Rotated baudline screenshot with Pipistrellus pipistrellus calls at 1/10th frequency and 10x time stretch. The frequency variation over time can be seen more clearly thanks to the time stretch.
+
+<img width="897" height="225" alt="bc_unk" src="https://github.com/user-attachments/assets/12da4687-ec28-4afa-aaee-81bed5dc994a" />
+
+Rotated baudline screenshot of unidentified, different calls with more variety. Scales again are 1/10th of actual frequency and 10x time scale.
 
 ### Further Reading
 All of these links are in German, sorry:
