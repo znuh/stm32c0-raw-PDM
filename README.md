@@ -17,7 +17,17 @@ Example (baudline):
 The three lines in the ultrasonic spectrum are from an electric fly swatter (which my cats hate).
 
 ## Hardware Setup
-TBD: schem, photo
+The PDM Clock is derived from the STM32 48MHz system clock with the Timer 1 Output Channel 2 and fed to the microphone through PA9. This clock is also fed back into the SPI2 SCK input of the STM32 at PB8. SPI2 is configured to Slave Mode and the PDM Data is captured through SPI2 MOSI at PA10. DMA is used for SPI2 RX in circular mode with a 16KiB ring buffer. (That's ~27ms of buffering time).
+<pre>+-------------------+                    +---------+
+|     STM32C0       |                    | PDM MIC |
+|                   |                    |         |
+|  PA9  (CLK Out) --+------------+-----> | CLK     |
+|                   |            |       |         |
+|  PB8  (SCK In) <--+------------+       |         |
+|                   |                    |         |
+|  PA10 (MOSI In) <-+------------------- | DATA    |
++-------------------+                    +---------+
+</pre>
 I added the microphone "dead bug style" to a simple [STM32C0 Board](https://github.com/znuh/stm32c0-nano-hw) I made a while ago. It looks like this:  
 <img width="400" height="400" alt="mems_faedel" src="https://github.com/user-attachments/assets/1ee36cf1-bee3-4f0f-9f3e-96211178976d" />  
 You have to be careful to keep any flux away from the microphone port (the opening).
