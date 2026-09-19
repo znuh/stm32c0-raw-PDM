@@ -6,16 +6,20 @@ Tools for reading the data from USB and converting the raw PDM bitstream to PCM 
 **Note:** All of this has been tested on Linux only. Might work on *BSDs with minor modifications.
 
 ## Why?
-I mainly made this to record bat calls. (See below.) While 80kHz is not sufficient to capture the calls of all bats, a lot of types can still be recorded with a very low cost setup - the SPH0641LU4H costs less than 4€.
+I mainly made this to record bat calls. ([See below](#analyzing-bat-calls).) While 80kHz is not sufficient to capture the calls of all bats, a lot of types can still be recorded with a very low cost setup - the SPH0641LU4H costs less than 4€.  
+Example (GNURadio):  
+<img width="1062" height="676" alt="fleder2" src="https://github.com/user-attachments/assets/26f0d25c-6d71-4c27-903c-9507be5c93ab" />
+Bat calls - probably [Pipistrellus pipistrellus](https://en.wikipedia.org/wiki/Common_pipistrelle) as seen in the live GNURadio waterfall.
 
-Apart from this, several other ultrasonic emitters such as inductors/transformers of power supplies, acoustic marten deterrents, etc., etc. can be found/identified with this microphone. It's quite interesting to "see" some of these things we cannot hear.
-
-TBD: example electric fly swatter
+Apart from this, several other ultrasonic emitters such as inductors/transformers of power supplies, acoustic marten deterrents, etc., etc. can be found/identified with this microphone. It's quite interesting to "see" some of these things we cannot hear.  
+Example (baudline):  
+<img width="1920" height="1055" alt="flyswatter" src="https://github.com/user-attachments/assets/bba3a689-0ebc-4108-9311-d725dd258d29" />
+The three lines in the ultrasonic spectrum are from an electric fly swatter (which my cats hate).
 
 ## Hardware Setup
 TBD: schem, photo
-I added the microphone "dead bug style" to a simple [STM32C0 Board](https://github.com/znuh/stm32c0-nano-hw) I made a while ago. It looks like this:
-TBD
+I added the microphone "dead bug style" to a simple [STM32C0 Board](https://github.com/znuh/stm32c0-nano-hw) I made a while ago. It looks like this:  
+<img width="400" height="400" alt="mems_faedel" src="https://github.com/user-attachments/assets/1ee36cf1-bee3-4f0f-9f3e-96211178976d" />  
 You have to be careful to keep any flux away from the microphone port (the opening).
 
 ## Analyzing Bat Calls
