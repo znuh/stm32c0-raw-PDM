@@ -35,7 +35,7 @@
  * - switch to normal mode (1.024MHz - 2.475MHz) before switching to Ultrasonic Mode (4.8MHz)
  * - Power-up Time:    <=50ms
  * - Mode-Change Time: <=10ms
- * => switch to 2.4MHz first, wait ~100ms, then switch to 4.8MHz
+ * => switch to 2.4MHz first, wait >=10ms, then switch to 4.8MHz
  */
 
 static void pdmclk_setup(void) {
@@ -91,7 +91,7 @@ int main(void) {
 	/* main loop */
 	while(1) {
 
-		/* sleep until >= 1ms has passed */
+		/* sleep until >= 10ms has passed */
 		do { __WFI(); } while(last_jiffies == _jiffies);
 		last_jiffies = _jiffies;
 
