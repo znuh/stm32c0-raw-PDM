@@ -162,7 +162,7 @@ int main(int argc, char **argv) {
 
 	/* flush old data */
 	do {
-		res = libusb_bulk_transfer(handle, ENDPOINT, (void*)buf, BUFSZ, &transferred, 1000);
+		res = libusb_bulk_transfer(handle, ENDPOINT, (void*)buf, BUFSZ, &transferred, 200);
 	} while(!res && transferred);
 
 	rxbuf_t *rxbuf = malloc(sizeof(rxbuf_t) * N_RXBUFS);
